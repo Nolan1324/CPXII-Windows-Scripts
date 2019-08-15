@@ -1,7 +1,7 @@
 # CPXII-Windows-Scripts
 CyberPatriot scripts/checklists created by a CyberPatriot student (me) for my team's personal use on Windows-based VMs. Not authorized for use by other teams.
 
-##Checklist
+## Checklist
 1. Read the README
 2. Do all forensics questions
 3. Do any tasks outlined in the README (ex. creating groups)
