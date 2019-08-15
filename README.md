@@ -21,5 +21,8 @@ CyberPatriot scripts/checklists created by a CyberPatriot student (me) for my te
 	* Reversible encryption: Disabled
 	* Password lockout attempts: 5
 	* Audits: all on SUCCESS and FAILURE
-  
+
+## Scripts
+	* *7* - [security_templates/CyberPatriot.inf](security_templates/CyberPatriot.inf) - not a script, but can be easily imported and configured to quickly set password policy, account lockout policy, audit policy, and security options 
+
 ----- To be continued ---->
