@@ -1,0 +1,2 @@
+Run PowerShell as Administrator, cd to this directory, and run this command:
+secedit /configure /db secedit.sdb /cfg "./CyberPatriot_CIS.inf"
