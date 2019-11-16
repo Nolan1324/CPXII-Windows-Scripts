@@ -22,8 +22,10 @@ CyberPatriot scripts/checklists created by a CyberPatriot student (me) for my te
 	* Password lockout attempts: 5
 	* Audits: all on SUCCESS and FAILURE
 8. Powershell
-	* `
-Set-ItemProperty -Path HKLM:\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU -Name AUOptions -Value 1`
+	```
+	Set-ExecutionPolicy Unrestricted
+	Set-ItemProperty -Path HKLM:\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU -Name AUOptions -Value 1
+	```
 
 ## Scripts
 * **7** - [security_templates/CyberPatriot.inf](security_templates/CyberPatriot.inf) - not a script, but can be easily imported and configured to quickly set password policy, account lockout policy, audit policy, and security options 
