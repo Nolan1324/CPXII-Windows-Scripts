@@ -54,6 +54,7 @@ CALL :Disable "XboxGipSvc"
 CALL :Disable "XblAuthManager"
 CALL :Disable "XblGameSave"
 CALL :Disable "XboxNetApiSvc"
+CALL :Disable "WebClient"
 pause
 EXIT /B %ERRORLEVEL%
 
