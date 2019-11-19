@@ -16,10 +16,6 @@ CALL :Disable "WinRM"
 SET /P RDP=Is this Windows Server? ([Y]/N)
 IF /I "%RDP%" NEQ "N" GOTO AFTERSERVER
 
-CALL :Disable "IISADMIN"
-CALL :Disable "LanmanServer"
-CALL :Disable "W3SVC"
-
 :AFTERSERVER
 CALL :Disable "BTAGService"
 CALL :Disable "bthserv"
@@ -55,6 +51,10 @@ CALL :Disable "XblAuthManager"
 CALL :Disable "XblGameSave"
 CALL :Disable "XboxNetApiSvc"
 CALL :Disable "WebClient"
+CALL :Disable "IISADMIN"
+CALL :Disable "LanmanServer"
+CALL :Disable "W3SVC"
+
 pause
 EXIT /B %ERRORLEVEL%
 
