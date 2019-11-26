@@ -24,7 +24,7 @@ CyberPatriot scripts/checklists created by a CyberPatriot student (me) for my te
 8. Powershell
 	```
 	Set-ExecutionPolicy Unrestricted
-	Set-ItemProperty -Path HKLM:\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU -Name AUOptions -Value 1
+	Set-ItemProperty -Path HKLM:\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU -Name AUOptions -Value 4
 	```
 
 ## Scripts
