@@ -61,6 +61,9 @@ CALL :Enable "mpssvc"
 CALL :Enable "WinDefend"
 Call :Enable "WdNisSvc"
 Call :Enable "Sense"
+Call :Enable "Dhcp"
+Call :Enable "Dnscache"
+Call :Enable "NtLmSsp"
 
 pause
 EXIT /B %ERRORLEVEL%
