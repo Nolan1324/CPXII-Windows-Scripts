@@ -44,7 +44,6 @@ CALL :Disable "WMSvc"
 CALL :Disable "WerSvc"
 CALL :Disable "WMPNetworkSvc"
 CALL :Disable "icssvc"
-CALL :Disable "WpnService"
 CALL :Disable "PushToInstall"
 CALL :Disable "XboxGipSvc"
 CALL :Disable "XblAuthManager"
@@ -55,10 +54,23 @@ CALL :Disable "IISADMIN"
 CALL :Disable "LanmanServer"
 CALL :Disable "W3SVC"
 
+REM Enable core services
+CALL :Enable "EventLog"
+CALL :Enable "wuauserv"
+CALL :Enable "mpssvc"
+CALL :Enable "WinDefend"
+Call :Enable "WdNisSvc"
+Call :Enable "Sense"
+
 pause
 EXIT /B %ERRORLEVEL%
 
 :Disable
 sc config %~1 start= disabled
 sc stop %~1
+EXIT /B 0
+
+:Enable
+sc config %~1 start= auto
+sc start %~1
 EXIT /B 0
