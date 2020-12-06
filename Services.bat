@@ -53,6 +53,13 @@ CALL :Disable "WebClient"
 CALL :Disable "IISADMIN"
 CALL :Disable "LanmanServer"
 CALL :Disable "W3SVC"
+CALL :Disable “iphlpsvc”
+CALL :Disable “iprip”
+CALL :Disable “Spooler”
+CALL: Disable “LanmanServer”
+CALL :Disable “SNMPTRAP”
+CALL: Disable “lmhosts”
+CALL :Disable “TapiSvc”
 
 REM Enable core services
 CALL :Enable "EventLog"
