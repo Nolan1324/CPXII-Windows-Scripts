@@ -14,7 +14,6 @@ GOTO AFTERRDP
 
 :AFTERYRDP
 IF /I "%RDP%" NEQ "N" GOTO AFTERRDP
-
 CALL :Disable "RasAuto"
 CALL :Disable "SessionEnv"
 CALL :Disable "TermService"
