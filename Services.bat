@@ -2,17 +2,6 @@
 SETLOCAL
 
 SET /P RDP=Is RDP a critical service? ([Y]/N)
-IF /I "%RDP%" NEQ "Y" GOTO AFTERYRDP
-CALL :Enable "RasAuto"
-CALL :Enable "SessionEnv"
-CALL :Enable "TermService"
-CALL :Enable "UmRdpService"
-CALL :Enable "RpcLocator"
-CALL :Enable "RemoteAccess"
-CALL :Enable "WinRM"
-GOTO AFTERRDP
-
-:AFTERYRDP
 IF /I "%RDP%" NEQ "N" GOTO AFTERRDP
 
 CALL :Disable "RasAuto"
