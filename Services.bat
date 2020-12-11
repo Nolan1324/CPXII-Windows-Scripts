@@ -11,6 +11,7 @@ CALL :Disable "UmRdpService"
 CALL :Disable "RpcLocator"
 CALL :Disable "RemoteAccess"
 CALL :Disable "WinRM"
+CALL :Disable "RasMan"
 
 :AFTERRDP
 SET /P RDP=Is this Windows Server? ([Y]/N)
