@@ -22,8 +22,11 @@ CALL :Disable "RpcLocator"
 CALL :Disable "RemoteAccess"
 CALL :Disable "WinRM"
 
-
 :AFTERRDP
+SET /P RDP=Is this Windows Server? ([Y]/N)
+IF /I "%RDP%" NEQ "N" GOTO AFTERSERVER
+
+:AFTERSERVER
 CALL :Disable "BTAGService"
 CALL :Disable "bthserv"
 CALL :Disable "Browser"
