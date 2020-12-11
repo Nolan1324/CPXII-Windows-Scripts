@@ -79,3 +79,8 @@ EXIT /B %ERRORLEVEL%
 sc config %~1 start= disabled
 sc stop %~1
 EXIT /B 0
+
+:Enable
+sc config %~1 start= auto
+sc start %~1
+EXIT /B 0
