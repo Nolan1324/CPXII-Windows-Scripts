@@ -93,6 +93,7 @@ Call :Enable "Dhcp"
 Call :Enable "Dnscache"
 Call :Enable "NtLmSsp"
 Call :Enable "SDRSVC"
+Call :Enable "SecurityHealthService"
 
 pause
 EXIT /B %ERRORLEVEL%
