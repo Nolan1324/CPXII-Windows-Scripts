@@ -5,25 +5,25 @@ SETLOCAL
 set /p rdpChk="Is RDP a critical service (y/n)"
 if %rdpChk%==y (
 	CALL :Enable "RasAuto"
-    CALL :Enable "SessionEnv"
-    CALL :Enable "TermService"
-    CALL :Enable "UmRdpService"
-    CALL :Enable "RpcLocator"
-    CALL :Enable "RemoteAccess"
-    CALL :Enable "WinRM"
-    CALL :Enable "RasMan"
+	CALL :Enable "SessionEnv"
+	CALL :Enable "TermService"
+	CALL :Enable "UmRdpService"
+	CALL :Enable "RpcLocator"
+	CALL :Enable "RemoteAccess"
+	CALL :Enable "WinRM"
+	CALL :Enable "RasMan"
 	goto:FTPService
 )
 if %rdpChk%==n (
 	CALL :Disable "RasAuto"
-    CALL :Disable "SessionEnv"
-    CALL :Disable "TermService"
-    CALL :Disable "UmRdpService"
-    CALL :Disable "RpcLocator"
-    CALL :Disable "RemoteAccess"
-    CALL :Disable "WinRM"
-    CALL :Disable "RasMan
-    goto:FTPService
+	CALL :Disable "SessionEnv"
+	CALL :Disable "TermService"
+	CALL :Disable "UmRdpService"
+	CALL :Disable "RpcLocator"
+	CALL :Disable "RemoteAccess"
+	CALL :Disable "WinRM"
+	CALL :Disable "RasMan"
+	goto:FTPService
 )
 goto:RDPService
 
