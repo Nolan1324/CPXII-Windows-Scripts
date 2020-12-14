@@ -92,6 +92,7 @@ Call :Enable "Sense"
 Call :Enable "Dhcp"
 Call :Enable "Dnscache"
 Call :Enable "NtLmSsp"
+Call :Enable "SDRSVC"
 
 pause
 EXIT /B %ERRORLEVEL%
