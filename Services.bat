@@ -1,23 +1,45 @@
 @echo off
 SETLOCAL
 
-SET /P RDP=Is RDP a critical service? ([Y]/N)
-IF /I "%RDP%" NEQ "N" GOTO AFTERRDP
+:RDPService
+set /p rdpChk="Is RDP a critical service (y/n)"
+if %rdpChk%==y (
+	CALL :Enable "RasAuto"
+    CALL :Enable "SessionEnv"
+    CALL :Enable "TermService"
+    CALL :Enable "UmRdpService"
+    CALL :Enable "RpcLocator"
+    CALL :Enable "RemoteAccess"
+    CALL :Enable "WinRM"
+    CALL :Enable "RasMan"
+	goto:FTPService
+)
+if %rdpChk%==n (
+	CALL :Disable "RasAuto"
+    CALL :Disable "SessionEnv"
+    CALL :Disable "TermService"
+    CALL :Disable "UmRdpService"
+    CALL :Disable "RpcLocator"
+    CALL :Disable "RemoteAccess"
+    CALL :Disable "WinRM"
+    CALL :Disable "RasMan
+    goto:FTPService
+)
+goto:RDPService
 
-CALL :Disable "RasAuto"
-CALL :Disable "SessionEnv"
-CALL :Disable "TermService"
-CALL :Disable "UmRdpService"
-CALL :Disable "RpcLocator"
-CALL :Disable "RemoteAccess"
-CALL :Disable "WinRM"
-CALL :Disable "RasMan"
+:FTPService
+set /p ftpChk="Is FTP a critical service (y/n)"
+if %ftpChk%==y (
+	CALL :Enable "FTPSVC"
+	goto:AFTERFTP
+)
+if %ftpChk%==n (
+	CALL :Disable "FTPSVC"
+	goto:AFTERFTP
+)
+goto:FTPService
 
-:AFTERRDP
-SET /P RDP=Is this Windows Server? ([Y]/N)
-IF /I "%RDP%" NEQ "N" GOTO AFTERSERVER
-
-:AFTERSERVER
+:AFTERFTP
 CALL :Disable "BTAGService"
 CALL :Disable "bthserv"
 CALL :Disable "Browser"
@@ -27,7 +49,6 @@ CALL :Disable "irmon"
 CALL :Disable "SharedAccess"
 CALL :Disable "lltdsvc"
 CALL :Disable "LxssManager"
-CALL :Disable "FTPSVC"
 CALL :Disable "MSiSCSI"
 CALL :Disable "InstallService"
 CALL :Disable "sshd"
