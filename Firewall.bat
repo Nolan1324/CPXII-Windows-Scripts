@@ -1,5 +1,6 @@
 @echo off
 
+netsh advfirewall reset
 netsh advfirewall set allprofiles state on
 netsh advfirewall firewall add rule name="!CyberPatriotTCPOut" protocol=TCP dir=out remoteport=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,23,37,53,69,79,87,109,110,111,119,123,137,138,139,143,161,162,179,389,411,412,445,512,513,514,515,540,636,1080,2000,2001,2049,3269,4001,4045,6001,8000,8080,8888 action=block
 netsh advfirewall firewall add rule name="!CyberPatriotTCPIn" protocol=TCP dir=in remoteport=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,23,37,53,69,79,87,109,110,111,119,123,137,138,139,143,161,162,179,389,411,412,445,512,513,514,515,540,636,1080,2000,2001,2049,3269,4001,4045,6001,8000,8080,8888 action=block
